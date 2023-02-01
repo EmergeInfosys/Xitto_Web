@@ -29,6 +29,7 @@ class User extends Authenticatable
         'address',
         'is_vendor',
         'is_blocked',
+        'referral_code',
         'image',
     ];
 
@@ -55,4 +56,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo(District::class);
     }
+
+    
 }

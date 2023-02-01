@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('otps', function (Blueprint $table) {
+        Schema::create('networks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->string('otp');
-            $table->timestamp('expire_at')->nullable();
+            $table->string('referral_code');
+            $table->integer('user_id');
+            $table->integer('parent_user_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('otps');
+        Schema::dropIfExists('networks');
     }
 };

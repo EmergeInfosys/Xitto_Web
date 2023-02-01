@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('country_code', 5)->default("+977");
             $table->string('gender');
             $table->string('address');
+            $table->string('referral_code')->nullable();
             $table->string('access_token', 1500)->nullable();
             $table->boolean('is_vendor')->default(0);
             $table->boolean('is_blocked')->default(0);

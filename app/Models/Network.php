@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class District extends Model
+class Network extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'id',
-        'name',       
-    ];  
-
-    public function province()
-    {
-        return $this->belongsTo(Province::class);
-    }
+        'referral_code',
+        'user_id',
+        'parent_user_id',
+        
+    ];
 }

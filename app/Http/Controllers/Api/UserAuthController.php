@@ -59,16 +59,14 @@ class UserAuthController extends Controller
                  'message' => 'User is Unauthorised',
                 ]);
              }
-
-             $user = User::find($request->id);
             
-             
-             
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->gender = $request->gender;
-        $user->district_id = $request->district_id;
-        $user->address = $request->address;
+
+             $user = User::find($request->id);       
+                $user->name = $request->name;
+                $user->email = $request->email;
+                $user->gender = $request->gender;
+                $user->district_id = $request->district_id;
+                $user->address = $request->address;
 
         if($request->hasFile('image')) { 
             $imageName = Str::random(32).".".$request->image->getClientOriginalExtension();
@@ -92,9 +90,9 @@ class UserAuthController extends Controller
                 'message' => 'User is Unauthorised'
             ]);
         }
-        
-        
-        
-
+    }
+    public function Userme(Request $request)
+    {
+        return new UserResource($request->user());
     }
 }
