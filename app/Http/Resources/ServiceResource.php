@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Brand;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Models\Service;
 
@@ -15,6 +16,7 @@ class ServiceResource extends JsonResource
      */
     public function toArray($request)
     {
+        
             return [
                 'id' =>$this->id,
                 'title' => $this->title,
